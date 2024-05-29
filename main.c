@@ -14,7 +14,7 @@
 #include "init.h"
 #include "display.h"
 #include "input.h"
-#include "synthesis.h";
+#include "synthesis.h"
 
 
 void handle_display(SDL_Renderer* renderer, Boxes* boxes, Wave *partials,
