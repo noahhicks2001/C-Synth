@@ -1,6 +1,6 @@
-<pre>
 # C-synth
 A basic wavetable synthesizer created in C 
+<pre>
 // IMPORTANT // 
     > If audio driver corruption occurs when modifying program, restart computer to reset driver. 
     > An additional volume scalar is applied to square and saw waves due to harsh increase in volume 
