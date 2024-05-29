@@ -30,6 +30,9 @@ A basic wavetable synthesizer created in C
       = -> enter text  // text for frequency can only be entered when max text length is reached
                        // use decimal to set tens placement
       backspace -> delete character
+    partial-waves:
+        up-arrow -> add partial wave
+        down-arrow -> remove partial wave
 
   MOUSE:
     partials:
