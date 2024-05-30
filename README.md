@@ -1,5 +1,10 @@
 # C-synth
 A basic wavetable synthesizer created in C 
+
+<div align=center>
+<video src= "https://github.com/noahhicks2001/C-Synth/assets/91241564/545e5305-c668-4192-a4a8-027ab9411684"/>
+</div>
+
 <pre>
 // IMPORTANT // 
     > If audio driver corruption occurs when modifying program, restart computer to reset driver. 
