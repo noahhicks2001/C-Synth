@@ -1,5 +1,6 @@
 #include "synthesis.h"
 
+
 void update_table_phase(Wave* wave) {
     wave->table_phase += wave->table_increment;     // apply phase increment
     if (wave->table_phase >= WAVETABLE_SIZE) {
@@ -55,27 +56,27 @@ void synthesize_audio(PaStream* stream, State* state, Wave* partials,
         for (int i = 0; i < SAMPLE_RATE / FRAMES_PER_BUFFER; i++) {         // loop over sample rate
             for (int j = 0; j < FRAMES_PER_BUFFER; j++) {                   // parse sample data
                 for (int k = 0; k < state->active_partials; k++) {
-
-                    switch (partials[k].type) {
-                    case SINE:
-                        wave_value += wavetables->sine[(int)floor(partials[k].table_phase)];
-                        break;
-                    case SQUARE:
-                        wave_value += wavetables->square[(int)floor(partials[k].table_phase)];
-                        wave_value *= 0.10;
-                        break;
-                    case SAW:
-                        wave_value += wavetables->saw[(int)floor(partials[k].table_phase)];
-                        wave_value *= 0.10;
-                        break;
-                    case TRIANGLE:
-                        wave_value += wavetables->triangle[(int)floor(partials[k].table_phase)];
-                        break;
-                    }
-
-                    // modulate frequency with lfo wobble
-                    if (lfos[WOBBLE].frequency > 0) {
-                        lfo_wobble(&partials[k], &lfos[WOBBLE], wavetables);
+                    if (partials[k].frequency > 0) {                        // prevents crash for lfo applied on 0 frequency
+                        switch (partials[k].type) {
+                        case SINE:
+                            wave_value += wavetables->sine[(int)floor(partials[k].table_phase)];
+                            break;
+                        case SQUARE:
+                            wave_value += wavetables->square[(int)floor(partials[k].table_phase)];
+                            wave_value *= 0.10;
+                            break;
+                        case SAW:
+                            wave_value += wavetables->saw[(int)floor(partials[k].table_phase)];
+                            wave_value *= 0.10;
+                            break;
+                        case TRIANGLE:
+                            wave_value += wavetables->triangle[(int)floor(partials[k].table_phase)];
+                            break;
+                        }
+                        // modulate frequency with lfo wobble
+                        if (lfos[WOBBLE].frequency > 0) {
+                            lfo_wobble(&partials[k], &lfos[WOBBLE], wavetables);
+                        }
                     }
 
                     update_table_phase(&partials[k]);
