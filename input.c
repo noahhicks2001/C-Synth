@@ -99,16 +99,18 @@ void check_keyboard_inputs(SDL_Event* event, State* state, Text* text,
             text->text[state->selected_textbox][text_length - 1] = '\0';
         }
         break;
+        
     case SDLK_EQUALS:
         if (state->selected_textbox != -1 && text_length == MAX_TEXT_LENGTH) {
             double freq = atof(text->text[state->selected_textbox]);
-            if (freq >= 20.00 && freq <= 20000) {
+            if ((freq >= LOWER_FREQ_BOUND && freq <= UPPER_FREQ_BOUND) || freq == 0.0) {
                 partials[state->selected_textbox].frequency = freq;
                 partials[state->selected_textbox].table_increment = \
                     table_increment(partials[state->selected_textbox].frequency);
             }
             else {
-                printf("INVALID FREQUENCY (enter between [20,20,000])\n");
+                printf("INVALID FREQUENCY (enter between [%i,%i] or 0.0000)\n", 
+                    LOWER_FREQ_BOUND, UPPER_FREQ_BOUND);
             }
 
         }
