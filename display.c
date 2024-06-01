@@ -215,11 +215,6 @@ void draw_textboxes(SDL_Renderer* renderer, Boxes* boxes, Text* text) {
 
 
     for (int i = 0; i < TEXTBOX_COUNT; i++) {
-
-        // create copies to avoid value mutation from size text
-        int width = boxes->textboxes[i].w;
-        int height = boxes->textboxes[i].h;
-
         // size text and create texture
         TTF_SizeText(text->font, text->text[i], &text->textboxes[i].w, &text->textboxes[i].h);
 
