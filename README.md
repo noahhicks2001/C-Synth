@@ -1,9 +1,22 @@
 # C-synth
-A basic wavetable synthesizer created in C 
+
+C-synth is a basic wavetable synthesizer created in the C programming language making use of SDL2 and portaudio. Input and visuals are handled through a user interface as pictured below which provides methods to change frequency, adjust volume/lfo values, select the type of wave used for wavetable synthesis and display the partial waves and resulting wave from additive synthesis of partials.
 
 <div align=center>
 <video src= "https://github.com/noahhicks2001/C-Synth/assets/91241564/545e5305-c668-4192-a4a8-027ab9411684"/>
 </div>
+Audio is synthesized using wavetables for the wave types of sine, square, saw and triangle.  In addition, complex waves can be generated through use of additive synthesis of up to three partial waves.
+
+Two lfos for wobble and tremolo are also included for the ability to modulate the synthesized output.
+
+For use of controls and notes pertaining to user experience please refer to readme document provided.
+
+Lastly, as C-synth makes use of [SDL2](https://www.libsdl.org/) and [Portaudio](https://www.portaudio.com/), some initial setup is required before compilation. For SDL2 the following links provide an excellent guide for setup of [SDL2](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/windows/msvc2019/index.php) and setup of [TTF_Fonts](https://lazyfoo.net/tutorials/SDL/16_true_type_fonts/index.php).
+
+Then for Portaudio, the following provides another great guide for setup of [Portaudio](https://cindybui.me/pages/blogs/visual_studio_0) for visual studio, (Also note that the TTF font used is 
+arial.ttf)
+
+
 
 <pre>
 // IMPORTANT // 
