@@ -27,7 +27,7 @@ void init_portaudio(PaStream** stream) {
         &output_parameters,
         SAMPLE_RATE,
         FRAMES_PER_BUFFER,
-        paClipOff,
+        NULL,
         NULL,
         NULL
 
