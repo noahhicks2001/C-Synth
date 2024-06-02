@@ -16,6 +16,7 @@ Lastly, as C-synth makes use of [SDL2](https://www.libsdl.org/) and [Portaudio](
 Then for Portaudio, the following provides another great guide for setup of [Portaudio](https://cindybui.me/pages/blogs/visual_studio_0) for visual studio, (Also note that the TTF font used is 
 arial.ttf)
 
+For an explanation of how the wavetable increment works, check out this [resource](https://www.music.mcgill.ca/~gary/307/week4/wavetables.html)
 
 
 <pre>
