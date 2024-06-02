@@ -20,13 +20,11 @@ arial.ttf)
 
 <pre>
 // IMPORTANT // 
-    > If audio driver corruption occurs when modifying program, restart computer to reset driver. 
-    > An additional volume scalar is applied to square and saw waves due to harsh increase in volume 
-    > clipping can occur with use of lfo for frequencies below 150hz 
+    > KEEP VOLUME AT LOW LEVEL IN CASE OF AUDIO CLIPPING OCCURING 
+    > CLIPPING CAN OCCUR WITH USE OF LFO FOR FREQUENCIES BELOW 150HZ
+    > IF AUDIO DRIVER CORRUPTION OCCURS WHEN MODIFYING PROGRAM, RESTART COMPUTER TO RESET DRIVER
+    > AN ADDITIONAL VOLUME SCALAR IS APPLIED TO SQUARE AND SAW WAVES DUE TO HARSH INCREASE IN VOLUME
     
-// INSTALL // 
-  refer to release page for required external dependencies 
-
 // CONTROLS // 
 
   KEYBOARD: 
