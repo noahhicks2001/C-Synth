@@ -1,6 +1,9 @@
 #include "init.h"
 
-
+/*
+init code referenced from 
+https://files.portaudio.com/docs/v19-doxydocs/blocking_read_write.html
+*/
 void init_portaudio(PaStream** stream) {
 
     PaStreamParameters output_parameters;
@@ -36,6 +39,10 @@ void init_portaudio(PaStream** stream) {
     pa_error = Pa_StartStream(*stream);
 }
 
+/*
+init code referenced from 
+https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index2.php
+*/
 void init_sdl(SDL_Renderer** renderer, SDL_Window** window, int screen_width,
     int screen_height) {
 
