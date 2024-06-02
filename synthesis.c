@@ -74,7 +74,9 @@ void synthesize_audio(PaStream* stream, State* state, Wave* partials,
                             break;
                         }
                         // modulate frequency with lfo wobble
-                        if (lfos[WOBBLE].frequency > 0) {
+                        // TO-DO, fix clipping with wobble under freq of 150.00
+                        // for now, simply disable application for frequencies under 150hz
+                        if (lfos[WOBBLE].frequency > 0 && partials[k].frequency >= 150.00) { 
                             lfo_wobble(&partials[k], &lfos[WOBBLE], wavetables);
                         }
                     }
