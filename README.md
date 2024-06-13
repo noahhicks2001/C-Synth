@@ -60,6 +60,9 @@ For an explanation of how the wavetable increment works, check out this [resourc
     wavetables: 
       click on desired wavetable with rmb to select and apply to selected partial 
       click with lmb to change wave type used for lfos 
+    
+TODO:
+    -> fix struct namespace pollution
 </pre>
 
 
